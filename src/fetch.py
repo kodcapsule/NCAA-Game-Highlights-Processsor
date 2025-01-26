@@ -48,6 +48,7 @@ def fetch_highlights():
 
         # Make a GET request to the API endpoint with the specified headers and query parameters
         # Set a timeout of 120 seconds to prevent hanging requests
+        print("Fetching Game highlights")
         response = requests.get(API_URL, headers=headers, params=query_params, timeout=120)
         
         # Raise an HTTPError if the HTTP request returned an unsuccessful status code

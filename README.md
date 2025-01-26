@@ -134,6 +134,8 @@ Edit the Trust Policy and replace it with this:
 ```
 
 ## **Step 4: Update .env file**
+Update the .env file with the following details
+
 1. RapidAPI_KEY: Ensure that you have successfully created the account and select "Subscribe To Test" in the top left of the Sports Highlights API
 2. AWS_ACCESS_KEY_ID=your_aws_access_key_id_here
 3. AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key_here
@@ -142,21 +144,25 @@ Edit the Trust Policy and replace it with this:
 ```bash
 aws mediaconvert describe-endpoints
 ```
-7. MEDIACONVERT_ROLE_ARN=arn:aws:iam::your_account_id:role/HighlightProcessorRole
+6. MEDIACONVERT_ROLE_ARN=arn:aws:iam::your_account_id:role/HighlightProcessorRole
 
 ## **Step 5: Secure .env file**
 ```bash
-chmod 600 .env
+chmod 600 src/.env
 ```
-## **Step 6: Locally Buikd & Run The Docker Container**
-Run:
+## **Step 6:Build & Run  Docker Container Locally**
+1. Build image: 
 ```bash
-docker build -t highlight-processor .
+docker build -t highlight-processor src/.
+```
+2. Check image: 
+```bash
+docker images
 ```
 
-Run the Docker Container Locally:
+2. Run the Docker Container Locally:
 ```bash
-docker run --env-file .env highlight-processor
+docker run --env-file src/.env highlight-processor
 ```
            
 This will run fetch.py, process_one_video.py and mediaconvert_process.py and the following files should be saved in your S3 bucket:
