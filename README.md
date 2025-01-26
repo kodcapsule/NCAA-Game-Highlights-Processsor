@@ -3,23 +3,24 @@
 
 # NCAA-Game-Highlights-Processsor
 
-## HighlightProcessor
+## Highlights Processor
 This project uses RapidAPI to obtain NCAA game highlights using a Docker container and uses AWS Media Convert to convert the media file.
 
 ## Project Files Overview
+### Main files
+**1. config.py script:** Initializes and imports all environment variables and configuration files 
 
-**config.py script** performs the following actions:
+**2. fetch.py script:** Fetchs highlights data from RapidAPI and saves the results to S3 as json
 
-**fetch.py script** performs the following actions:
+**3. process_one_video.py script:** Extracts video url from json file in S3 and downloads video from the internet and saves to S3. 
 
-**process_one_video.py script** performs the following actions:
+**4. mediaconvert_process.py** Processes video files and stores the videos back to S3 
 
-**mediaconvert_process.py** performs the following actions:
+**5. run_all.py performs:** Runs all the scripts in a chronological order and provides buffer time for the tasks to be created.
 
-**run_all.py performs** the following actions:
+**6. Dockerfile:** Provides all the  steps  to build and run a docker container.
 
-**Dockerfile** performs the following actions:
-Provides the step by step approach to build the image.
+### Terraform files
 
 **Terraform Scripts:**
 
@@ -27,30 +28,16 @@ Provides the step by step approach to build the image.
 ## Prerequisites
 Before running the scripts, ensure you have the following:
 
-### **1** Create Rapidapi Account
-Rapidapi.com account, will be needed to access highlight images and videos.
+- 1. Rapidapi.com API key: will be needed to access highlight images and videos.
 
-For this example we will be using NCAA (USA College Basketball) highlights since it's included for free in the basic plan.
+[Sports Highlights API](https://rapidapi.com/highlightly-api-highlightly-api-default/api/sport-highlights-api/playground/apiendpoint_16dd5813-39c6-43f0-aebe-11f891fe5149) is the 
 
-[Sports Highlights API](https://rapidapi.com/highlightly-api-highlightly-api-default/api/sport-highlights-api/playground/apiendpoint_16dd5813-39c6-43f0-aebe-11f891fe5149) is the endpoint we will be using 
+- 2. Docker: Make sure Docker is installed
 
-## **2** Verify prerequites are installed 
+- 3  AWS CLI:  Installed and congigured 
 
-Docker should be pre-installed in most regions docker --version
+- 4 Python: Python  should be installed
 
-AWS CloudShell has AWS CLI pre-installed aws --version
-
-Python3 should be pre-installed also python3 --version
-
-## **3** Retrieve AWS Account ID
-
-Copy your AWS Account ID Once logged in to the AWS Management Console Click on your account name in the top right corner You will see your account ID Copy and save this somewhere safe because you will need to update codes in the labs later
-
-## **4** Retrieve Access Keys and Secret Access Keys
-You can check to see if you have an access key in the IAM dashboard
-Under Users, click on a user and then "Security Credentials"
-Scroll down until you see the Access Key section
-You will not be able to retrieve your secret access key so if you don't have that somewhere, you need to create an access key.
 
 
 ## **Architecture**
@@ -160,7 +147,7 @@ docker build -t highlight-processor src/.
 docker images
 ```
 
-2. Run the Docker Container Locally:
+3. Run the Docker Container Locally:
 ```bash
 docker run --env-file src/.env highlight-processor
 ```
