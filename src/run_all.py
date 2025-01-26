@@ -78,6 +78,7 @@ def main():
     """
     try:
         # Step 1: Run fetch.py
+        print("============  Fetching Video Data From RapidAPI ========================")
         run_script("fetch.py")
 
         # Buffer time between scripts to allow resources to stabilize
@@ -85,6 +86,7 @@ def main():
         time.sleep(WAIT_TIME_BETWEEN_SCRIPTS)
 
         # Step 2: Run process_one_video.py
+        print("============= Video Processing  Running   =======================")
         run_script("process_one_video.py")
 
         # Buffer time between scripts to allow resources to stabilize
@@ -92,6 +94,7 @@ def main():
         time.sleep(WAIT_TIME_BETWEEN_SCRIPTS)
 
         # Step 3: Run mediaconvert_process.py
+        print("============= MediaConvert Script Running =======================")
         run_script("mediaconvert_process.py")
 
         # Inform the user that all scripts have been executed successfully

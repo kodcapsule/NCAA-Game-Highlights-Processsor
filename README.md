@@ -41,7 +41,7 @@ Before running the scripts, ensure you have the following:
 
 
 ## **Architecture**
-![GameHighlightProcessor](https://github.com/user-attachments/assets/762c3582-c6fe-48b2-b7da-0ff5b86b7970)
+![GameHighlightProcessor](./images/Architecture.png)
 
 ## **Project Structure**
 ```bash
@@ -246,3 +246,5 @@ bash ncaaprojectcleanup.sh
 
 ### **Future Enhancements**
 1. Automating the creation of VPCs/networking infra, media endpoint
+
+
