@@ -28,15 +28,15 @@ This project uses RapidAPI to obtain NCAA game highlights using a Docker contain
 ## Prerequisites
 Before running the scripts, ensure you have the following:
 
-- 1. Rapidapi.com API key: will be needed to access highlight images and videos.
+-1. Rapidapi.com API key: will be needed to access highlight images and videos.
 
 [Sports Highlights API](https://rapidapi.com/highlightly-api-highlightly-api-default/api/sport-highlights-api/playground/apiendpoint_16dd5813-39c6-43f0-aebe-11f891fe5149) is the 
 
-- 2. Docker: Make sure Docker is installed
+-2. Docker: Make sure Docker is installed
 
-- 3  AWS CLI:  Installed and congigured 
+-3.  AWS CLI:  Installed and congigured 
 
-- 4 Python: Python  should be installed
+-4. Python: Python  should be installed
 
 
 
