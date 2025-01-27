@@ -1,7 +1,7 @@
 
 # 30 Day DevOps Challenge || Week 02 Day 02
 
-# NCAA-Game-Highlights-Processsor
+# NCAA-Game-Highlights-Processor
 
 ## Highlights Processor
 This project uses RapidAPI to obtain NCAA game highlights using a Docker container and uses AWS Media Convert to convert the media file.
